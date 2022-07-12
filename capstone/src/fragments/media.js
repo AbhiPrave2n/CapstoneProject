@@ -1,10 +1,16 @@
 import React from 'react';
 import {StyleSheet, View ,Image, Text, Button} from 'react-native';
+import Speed from '../components/speed';
+
+
 
 const Media = () => {
+
+
+    
     return ( 
         <View>
-            <Text>Hello Media</Text>
+            <Speed/>
         </View>
      );
 }
