@@ -7,6 +7,7 @@ import Info from '../fragments/info';
 import Media from '../fragments/media';
 import Dashboard from '../fragments/dashboard';
  import Speedo1 from '../fragments/speedtestcool2';
+ import Map from '../fragments/map';
 
 const Screen1=()=>{
 
@@ -16,7 +17,7 @@ const Screen1=()=>{
         <NavigationContainer>
         <Tab.Navigator>
         <Tab.Screen name="Dashboard" component={Dashboard} />    
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Map" component={Map} />
         <Tab.Screen name="Info" component={Info} />
         <Tab.Screen name="Media" component={Media} />
         <Tab.Screen name="Speed" component={Speedo1} />

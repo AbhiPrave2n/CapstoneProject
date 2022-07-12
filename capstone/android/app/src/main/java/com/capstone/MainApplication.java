@@ -13,6 +13,7 @@ import com.capstone.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.sensors.RNSensorsPackage;
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
