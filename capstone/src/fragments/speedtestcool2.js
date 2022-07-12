@@ -18,7 +18,7 @@ const Speedo1 = () => {
 
   function myfun(x,y,z,timestamp)
   {
-    console.log("X is "+x);
+    // console.log("X is "+x);
     if(x<0)
     {
       x=x*-1;
@@ -38,9 +38,29 @@ const Speedo1 = () => {
 
       const subscription = accelerometer.subscribe(({ x, y, z, timestamp }) =>
       myfun(x, y, z, timestamp));
+
+      const styles=StyleSheet.create({
+        wrapper:{
+          flex:1,
+          flexDirection:'row',
+          // borderWidth:4,
+          // borderColor:'black',
+
+          
+        },
+        container:{
+          flex:1,
+          flexDirection:'row',
+          justifyContent:'center',
+          alignContent:'center',
+        }
+
+      })
+
        return (
-        <View>
-         <Speedometer value={speed} fontFamily="squada-one"  >
+        <View style={styles.wrapper}>
+          <View style={styles.container}>
+         <Speedometer value={100} fontFamily="squada-one"  >
            <Background />
            <Arc />
            <Needle />
@@ -48,6 +68,7 @@ const Speedo1 = () => {
            <Marks />
            <Indicator />
          </Speedometer>
+         </View>
          </View>
        );
 
