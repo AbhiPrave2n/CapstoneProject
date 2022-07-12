@@ -1,10 +1,8 @@
 import React from 'react';
 import {StyleSheet, View ,Image, Text, Button} from 'react-native';
 import CarImg from "../assets/car.png";
-import Speedo1 from './speedtestcool2';
+import Speed from '../components/speed';
 
-
- 
 const Dashboard=()=>{
 
 
@@ -23,28 +21,19 @@ const Dashboard=()=>{
         row2c2 : {
             flex:1,
             flexDirection : 'row',
-            // justifyContent:'center',
-            // alignContent:'center',
+            justifyContent:'center',
+            alignContent:'center',
             borderWidth:4,
             borderColor:'black',
             
-            
         },
         row2container:{
-            flex:1,
-            flexDirection:'row',
-            justifyContent:'center',
-            alignContent:'center',
-            // borderWidth:6,
-            // borderColor:'red',
             top:25,
         },
         row2 : {
             flex:1,
             flexDirection : 'row',
             borderWidth:2,
-            
-            
         },
 
         carimage:{
@@ -60,8 +49,8 @@ const Dashboard=()=>{
                 <Image style ={styles.carimage} source={CarImg} /> 
                 <View style={styles.row2c2}>
                     <View style={styles.row2container}>
-                    <Speedo1/>
-                    </View>
+                  <Speed/>
+                  </View>
                 </View>
 
             </View>

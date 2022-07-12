@@ -12,7 +12,7 @@ import Speedometer, {
 } from 'react-native-cool-speedometer';
 import { useState } from 'react';
 
-const Speedo1 = () => {
+const Speed = () => {
 
   const[speed,useSpeed]=useState(0);
 
@@ -39,27 +39,26 @@ const Speedo1 = () => {
       const subscription = accelerometer.subscribe(({ x, y, z, timestamp }) =>
       myfun(x, y, z, timestamp));
 
-      const styles=StyleSheet.create({
-        wrapper:{
-          flex:1,
-          flexDirection:'row',
-          // borderWidth:4,
-          // borderColor:'black',
+    //   const styles=StyleSheet.create({
+    //     wrapper:{
+    //       flex:1,
+    //       flexDirection:'row',
+    //       // borderWidth:4,
+    //       // borderColor:'black',
 
           
-        },
-        container:{
-          flex:1,
-          flexDirection:'row',
-          justifyContent:'center',
-          alignContent:'center',
-        }
+    //     },
+    //     container:{
+    //       flex:1,
+    //       flexDirection:'row',
+    //       justifyContent:'center',
+    //       alignContent:'center',
+    //     }
 
-      })
+    //   })
 
        return (
-        <View style={styles.wrapper}>
-          <View style={styles.container}>
+          <View>
          <Speedometer value={speed} fontFamily="squada-one"  >
            <Background />
            <Arc />
@@ -69,9 +68,8 @@ const Speedo1 = () => {
            <Indicator />
          </Speedometer>
          </View>
-         </View>
        );
 
 }
  
-export default Speedo1;
+export default Speed;
