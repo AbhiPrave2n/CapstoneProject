@@ -8,11 +8,16 @@ import Animated , {
     useAnimatedSensor,
     SensorType,
   } from 'react-native-reanimated';
+  import { accelerometer } from "react-native-sensors";
 
 const Info = () => {
     const animatedSensor = useAnimatedSensor(SensorType.ACCELEROMETER, {
         interval: 100,
       });
+
+
+  //     const subscription = accelerometer.subscribe(({ x, y, z, timestamp }) =>
+  // console.log({ x, y, z, timestamp }));
 
       const animatedStyles = useAnimatedStyle(() => {
         const rotationSpeed = animatedSensor.sensor.value.z;
