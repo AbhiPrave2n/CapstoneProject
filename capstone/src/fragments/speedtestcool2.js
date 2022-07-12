@@ -10,24 +10,37 @@ import Speedometer, {
   Marks,
   Indicator,
 } from 'react-native-cool-speedometer';
+import { useState } from 'react';
 
 const Speedo1 = () => {
 
-  // function myfun(x,y,z,timestamp)
-  // {
-  //   console.log("X is "+x);
-  //   // console.log("Y is "+y);
-  //   // console.log("Z is "+z);
-  //   // console.log("Time Stamp is is "+timestamp);
-  // }
+  const[speed,useSpeed]=useState(0);
+
+  function myfun(x,y,z,timestamp)
+  {
+    console.log("X is "+x);
+    if(x<0)
+    {
+      x=x*-1;
+      useSpeed(x*6)
+    }
+    else
+    {
+      useSpeed(x*6);
+    }
+    // console.log("Y is "+y);
+    // console.log("Z is "+z);
+    // console.log("Time Stamp is is "+timestamp);
+    // console.log(speed);
+  }
 
   setUpdateIntervalForType(SensorTypes.accelerometer, 100);
 
-      // const subscription = accelerometer.subscribe(({ x, y, z, timestamp }) =>
-      // myfun(x, y, z, timestamp)
-      // )
+      const subscription = accelerometer.subscribe(({ x, y, z, timestamp }) =>
+      myfun(x, y, z, timestamp));
        return (
-         <Speedometer value={128} fontFamily="squada-one">
+        <View>
+         <Speedometer value={speed} fontFamily="squada-one"  >
            <Background />
            <Arc />
            <Needle />
@@ -35,6 +48,7 @@ const Speedo1 = () => {
            <Marks />
            <Indicator />
          </Speedometer>
+         </View>
        );
 
 }
