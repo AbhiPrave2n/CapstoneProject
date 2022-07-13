@@ -1,7 +1,11 @@
 import React from 'react';
 import {StyleSheet, View ,Image, Text, Button} from 'react-native';
 import CarImg from "../assets/car.png";
+import MusicPlayer from '../components/MusicPlayer';
 import Speed from '../components/speed';
+import MusicImg from "../assets/images/music-player-img.jpg";
+import { MapScreen } from '../screens';
+import Battery from '../components/batteryPercentage';
 
 const Dashboard=()=>{
 
@@ -11,7 +15,7 @@ const Dashboard=()=>{
             flex : 1,
             flexDirection : 'column',
             width : '100%',    
-            backgroundColor: 'lightgrey'
+            backgroundColor: '#2e2828'
         },
         row1 : {
             flex:1,
@@ -33,12 +37,28 @@ const Dashboard=()=>{
         row2 : {
             flex:1,
             flexDirection : 'row',
-            borderWidth:2,
+            borderWidth:4,
         },
 
         carimage:{
             width: "40%",
             height: "90%",
+        },
+        map:{
+            height:"100%",
+            width:"35%",
+            borderRightWidth:2,
+        },
+        musicimg:{
+            height:'5%',
+            width:"25%",
+        },
+        batteryPercent:{
+            flex:1,
+            flexDirection:'row',
+            justifyContent:'center',
+            alignContent:'center',
+            top:30,
         }
     
     });
@@ -56,9 +76,10 @@ const Dashboard=()=>{
             </View>
 
             <View style = {styles.row2}>
-                <View><Text>Hi</Text></View>
-                <View><Text>Bye</Text></View>
-                <View><Text>Hello</Text></View>
+                <View style={styles.batteryPercent}><Battery/></View>
+                <Image source={MusicImg}/>
+                <View style={styles.map}><MapScreen/></View>
+                
 
             </View>
          

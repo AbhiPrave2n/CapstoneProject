@@ -18,20 +18,24 @@ const Speed = () => {
 
   function myfun(x,y,z,timestamp)
   {
-    // console.log("X is "+x);
-    if(x<0)
+    // console.log("X is "+Math.abs(x));
+    if(x <= -9.8)
     {
-      x=x*-1;
-      useSpeed(x*6)
+      x=x+9.8;
+      x=Math.abs(x);
+      useSpeed(x*12)
+    }
+    else if(x>-9.8 && x<=0)
+    {
+      x=Math.abs(x);
+      useSpeed(x*12);
+
     }
     else
     {
-      useSpeed(x*6);
+      useSpeed(x*12);
     }
-    // console.log("Y is "+y);
-    // console.log("Z is "+z);
-    // console.log("Time Stamp is is "+timestamp);
-    // console.log(speed);
+   
   }
 
   setUpdateIntervalForType(SensorTypes.accelerometer, 100);
@@ -39,23 +43,6 @@ const Speed = () => {
       const subscription = accelerometer.subscribe(({ x, y, z, timestamp }) =>
       myfun(x, y, z, timestamp));
 
-    //   const styles=StyleSheet.create({
-    //     wrapper:{
-    //       flex:1,
-    //       flexDirection:'row',
-    //       // borderWidth:4,
-    //       // borderColor:'black',
-
-          
-    //     },
-    //     container:{
-    //       flex:1,
-    //       flexDirection:'row',
-    //       justifyContent:'center',
-    //       alignContent:'center',
-    //     }
-
-    //   })
 
        return (
           <View>

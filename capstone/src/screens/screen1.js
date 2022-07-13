@@ -18,7 +18,7 @@ const Screen1=()=>{
         <Tab.Navigator>
         <Tab.Screen name="Dashboard" component={Dashboard} />    
         <Tab.Screen name="Map" component={Map} />
-        <Tab.Screen name="Info" component={Info} />
+        {/* <Tab.Screen name="Info" component={Info} /> */}
         <Tab.Screen name="Media" component={Media} />
         <Tab.Screen name="Speed" component={Speedo1} />
       </Tab.Navigator>
